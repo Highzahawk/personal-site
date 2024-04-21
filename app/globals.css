@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #0070f3; /* Choose a color that fits your design */
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+nav a:focus {
+  outline: 2px solid #0056b3; /* Again, choose a focus color that fits your design */
+  outline-offset: 2px;
+}
+
+/* Add custom focus styles for all focusable elements */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 3px solid #0070f3; /* Replace with your brand color or preferred style */
+  outline-offset: 2px;
+}
+
