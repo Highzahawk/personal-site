@@ -53,6 +53,12 @@ export default function ThingsToRead() {
     <Layout>
       <main className="p-24">
         <h1 className="text-3xl font-bold text-center my-5">Things to Read</h1>
+        {/* Instructions for users on how to navigate using keyboard */}
+        <div className="text-center my-8">
+          <p className="text-lg">Use the <kbd>Tab</kbd> key to move focus between the links below.</p>
+          <p className="text-lg">Once focused, press <kbd>Enter</kbd> to open the link.</p>
+          <p className="text-lg">Use the <kbd>Arrow Down</kbd> and <kbd>Arrow Up</kbd> keys to navigate the list without moving the page.</p>
+        </div>
         <ul className="list-none space-y-3" ref={listRef}>
           {readingList.map((item, index) => (
             <li key={index} className="text-blue-500 hover:text-blue-700">
