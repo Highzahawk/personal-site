@@ -1,9 +1,10 @@
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link';
 import React from 'react';
 import type { ReactNode } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,15 +37,16 @@ function Layout({ children }: LayoutProps) {
 
   return (
     <>
-      <nav>
-        <ul style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-around' }}>
-          <li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, '/')}>
-            {/* Link is used only for semantic purposes and mouse navigation */}
-            <Link href="/" tabIndex={-1}>Home</Link>
+      <nav className="bg-gray-900 text-white p-4 shadow-lg">
+        <ul className="flex justify-around items-center">
+          <li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, '/')} className="hover:text-blue-400 transition-colors duration-300">
+            <Link href="/" tabIndex={-1} className="text-lg font-semibold">Home</Link>
           </li>
-          <li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, '/things-to-read')}>
-            {/* Link is used only for semantic purposes and mouse navigation */}
-            <Link href="/things-to-read" tabIndex={-1}>Things to Read</Link>
+          <li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, '/things-to-read')} className="hover:text-blue-400 transition-colors duration-300">
+            <Link href="/things-to-read" tabIndex={-1} className="text-lg font-semibold">Things to Read</Link>
+          </li>
+          <li tabIndex={0} onKeyDown={(e) => handleKeyPress(e, '/new-page')} className="hover:text-blue-400 transition-colors duration-300">
+            <Link href="/new-page" tabIndex={-1} className="text-lg font-semibold">New Page</Link>
           </li>
         </ul>
       </nav>
